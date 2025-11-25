@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"encoding/base64"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"math"
 	"os"
@@ -229,7 +229,7 @@ func main() {
 
 	decoder := base64.NewDecoder(base64.StdEncoding, input)
 
-	data, err := ioutil.ReadAll(decoder)
+	data, err := io.ReadAll(decoder)
 	if err != nil {
 		log.Fatal(err)
 	}
